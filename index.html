@@ -210,13 +210,14 @@
             <div class="input-group">
                 <label for="messageKey">Message Key</label>
                 <input type="text" id="messageKey" placeholder="z.B. user123, order-456, etc." required>
-                <div class="error" id="keyError">Bitte geben Sie einen Key ein</div>
+                <div class="error" id="keyError">Please enter a valid key</div>
             </div>
 
             <div class="input-group">
-                <label for="partitionCount">Anzahl Partitionen</label>
-                <input type="number" id="partitionCount" min="1" max="1000" placeholder="z.B. 3, 6, 12" required>
-                <div class="error" id="partitionError">Bitte geben Sie eine gültige Anzahl Partitionen ein (1-1000)
+                <label for="partitionCount"># Partitions</label>
+                <input type="number" id="partitionCount" min="1" max="1000" placeholder="z.B. 3, 6, 12" value="12"
+                    required>
+                <div class="error" id="partitionError">Please enter a valid amount of paritions (1-1000)
                 </div>
             </div>
 
@@ -225,7 +226,7 @@
 
         <div class="result" id="result">
             <div class="partition-number" id="partitionNumber">0</div>
-            <div class="partition-label">Ziel-Partition</div>
+            <div class="partition-label">Target-Partition</div>
             <div class="details">
                 <div class="hash-info">
                     <span>Hash-Wert:</span>
