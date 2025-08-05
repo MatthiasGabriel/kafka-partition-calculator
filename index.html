@@ -297,12 +297,18 @@
             }
 
             const hash = murmur2(key);
-            const partition = Math.abs(hash) % partitionCount;
+            const partition = toPositive(hash) % partitionCount;
 
             return {
                 partition: partition,
                 hash: hash
             };
+        }
+
+        // Copy functionality of org.apache.kafka.common.utils.toPositive
+        function toPositive(number){
+            const javaMaxInt = 0x7fffffff
+            return number & javaMaxInt
         }
 
         function showError(elementId, show = true) {

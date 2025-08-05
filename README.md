@@ -14,9 +14,9 @@ A simple web tool to calculate the target partition for Kafka message keys using
 Open `index.html` in any web browser. No build process required.
 
 ## Algorithm
-Uses the same logic as Apache Kafka:
+Uses the same logic as the java clients BuiltInPartitioner:
 ```
-partition = abs(murmur2(messageKey)) % partitionCount
+partition = toPositive(murmur2(messageKey)) % partitionCount
 ```
 
 ## Features
